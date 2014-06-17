@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
+import java.lang.String;
  
 public class MurrayHillTrending {
  
@@ -63,13 +64,23 @@ public class MurrayHillTrending {
 	             JSONObject response = (JSONObject) jsonObject.get("response");
 	             JSONArray venues = (JSONArray) response.get("venues");
 	             
-	             // Print all 
+	             // Print all values of the JSONArray
 	             for(int i=0; i<venues.size(); i++){
-
+	            	 //narrow down search to where the category = bars, clubs, or lounges
 	            	 JSONObject venuenames = (JSONObject) venues.get(i);
 	            	 String name= (String) venuenames.get("name");
+	            	 JSONObject Now = (JSONObject) venuenames.get("hereNow");
+	            	 String count = (String) Now.get("summary");
+	            	 JSONArray categories = (JSONArray) venuenames.get("categories");
+	            	 JSONObject categories1 = (JSONObject) categories.get(0);
 
-	            	 System.out.println(name);
+	            	 String catname = (String) categories1.get("pluralName");
+
+	            	 if (catname.equals("Rock Clubs") || catname.equals("Bars") || 
+	            			 catname.equals("Sports Bars") || catname.equals("Lounges")){
+
+	            		 System.out.println(name + " have " + count + " " + catname);
+	            	 }
 	             }
 	  
 	 
