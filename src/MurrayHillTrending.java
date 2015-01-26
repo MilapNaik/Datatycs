@@ -81,6 +81,7 @@ public class MurrayHillTrending {
 
 	            		 System.out.println(name + " have " + count + " " + catname);
 	            	 }
+	            	 //System.out.println(name + " has " + count + " " + catname);
 	             }
 	  
 	 
