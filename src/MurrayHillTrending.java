@@ -70,15 +70,15 @@ public class MurrayHillTrending {
 	            	 String count = (String) Now.get("summary");
 	            	 JSONArray categories = (JSONArray) venuenames.get("categories");
 	            	 JSONObject categories1 = (JSONObject) categories.get(0);
-
-	            	 String catname = (String) categories1.get("pluralName");
-
-	            	 /*if (catname.equals("Rock Clubs") || catname.equals("Bars") || 
-	            			 catname.equals("Sports Bars") || catname.equals("Lounges")){
-
-	            		 System.out.println(name + " have " + count + " " + catname);
-	            	 }*/
+    
 	            	 System.out.println(name + " has " + count);
+	            	 
+	            	 /*String catname = (String) categories1.get("pluralName");
+	            	 if (catname.equals("Rock Clubs") || catname.equals("Bars") || 
+        			 catname.equals("Sports Bars") || catname.equals("Lounges")){
+
+        		 System.out.println(name + " have " + count + " " + catname);
+        	 }*/
 	             }
 	 
 	     } catch (ParseException ex) {
