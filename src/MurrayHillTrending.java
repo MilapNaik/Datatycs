@@ -10,7 +10,7 @@ import org.json.simple.parser.JSONParser;
 import java.lang.String;
  
 public class MurrayHillTrending {
- 
+	
 	private final String USER_AGENT = "Mozilla/5.0";
  
 	public static void main(String[] args) throws Exception {
@@ -19,13 +19,10 @@ public class MurrayHillTrending {
  
 		System.out.println("Testing 1 - Send Http GET request");
 		http.sendGet();
-
- 
 	}
  
 	// HTTP GET request
-	private void sendGet() throws Exception {
-		
+	private void sendGet() throws Exception {	
 		//Foursquare api url for venues that are trending, with oauth_token added
 		String url = "https://api.foursquare.com/v2/venues/trending?ll=40.747879200000000000,-73.975656700000000000&" +
 				"oauth_token=FPYYELOUX1GUN0GQAT3UDAVDS0WZS4C0VRGGIMNNUZ2N50VH&v=20140614";
@@ -55,7 +52,7 @@ public class MurrayHillTrending {
 		in.close();
 
 		String list = responses.toString();
-		 try {
+		try {
 			 
 	             JSONParser jsonParser = new JSONParser();
 	 
@@ -76,25 +73,20 @@ public class MurrayHillTrending {
 
 	            	 String catname = (String) categories1.get("pluralName");
 
-	            	 if (catname.equals("Rock Clubs") || catname.equals("Bars") || 
+	            	 /*if (catname.equals("Rock Clubs") || catname.equals("Bars") || 
 	            			 catname.equals("Sports Bars") || catname.equals("Lounges")){
 
 	            		 System.out.println(name + " have " + count + " " + catname);
-	            	 }
-	            	 //System.out.println(name + " has " + count + " " + catname);
+	            	 }*/
+	            	 System.out.println(name + " has " + count);
 	             }
-	  
 	 
-	         } catch (ParseException ex) {
-	 
+	     } catch (ParseException ex) {
 	             ex.printStackTrace();
 	 
-	         } catch (NullPointerException ex) {
-	 
+	     } catch (NullPointerException ex) {
 	             ex.printStackTrace();
-	 
-	         }
-	
 	     }
+    }
 
 }
