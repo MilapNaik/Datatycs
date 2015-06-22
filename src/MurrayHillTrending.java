@@ -28,8 +28,8 @@ public class MurrayHillTrending {
 		
 		//Foursquare api url for venues that are trending, with oauth_token added
 		String url = "https://api.foursquare.com/v2/venues/trending?ll=" +
-				/*LiveRamp = 37.7867,-122.401193
-				 *Murray Hill = 40.747879200000000000,-73.975656700000000000 */
+				/* LiveRamp = 37.7867,-122.401193
+				 * Murray Hill = 40.747879200000000000,-73.975656700000000000 */
 				"40.747879200000000000,-73.975656700000000000&" + 
 				"oauth_token=FPYYELOUX1GUN0GQAT3UDAVDS0WZS4C0VRGGIMNNUZ2N50VH&v=20140614";
  
@@ -75,10 +75,10 @@ public class MurrayHillTrending {
 	            	 String summary = (String) Now.get("summary");
 	            	 long count = (Long) Now.get("count");
 
-	            	 /*To show all venues nearby*/
-	            	  System.out.println(name + ": " + summary);   	  
+	            	 /*To show all venues nearby
+	            	  System.out.println(name + ": " + summary);   	  */
 	            	 
-	            	 /*To narrow down to bars, clubs, or loungs nearby
+	            	 /*To narrow down to bars, clubs, or loungs nearby*/
 	            	  
 	            	 JSONArray categories = (JSONArray) venuenames.get("categories");
 	            	 JSONObject categories1 = (JSONObject) categories.get(0);
@@ -88,9 +88,9 @@ public class MurrayHillTrending {
         			 	 catname.equals("Sports Bars") || catname.equals("Lounges")){
         		 			System.out.println(name + " have " + count + " " + catname);
         	 		 }
-	            	 */
 	            	 
-	            	 total= total +count;
+	            	 
+	            	 //total= total +count;
 	             }
 	             
 	             
@@ -137,7 +137,7 @@ public class MurrayHillTrending {
 		
 		//Parse JSON response
 				String list = responses.toString();
-				System.out.println(list);
+				//System.out.println(list);
 				try {
 					
 		            JSONParser jsonParser = new JSONParser();
