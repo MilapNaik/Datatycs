@@ -61,18 +61,18 @@ public class MurrayHillTrending {
 			 
 	             JSONParser jsonParser = new JSONParser();
 	 
-	             //break down Foursquare's JSON Object to get to the data
+	             /* Break down Foursquare's JSON Object to get to the data */
 	             JSONObject jsonObject = (JSONObject) jsonParser.parse(list);
 	             JSONObject response = (JSONObject) jsonObject.get("response");
 	             JSONArray venues = (JSONArray) response.get("venues");
 	             
-	             // Print all values of the JSONArray
+	             /* Print all values of the JSONArray*/
 	             for(int i=0; i<venues.size(); i++){
-	            	 //All venues nearby
+	            	 /* All venues nearby */
 	            	 JSONObject venuenames = (JSONObject) venues.get(i);
 	            	 String name= (String) venuenames.get("name");
 	            	 JSONObject Now = (JSONObject) venuenames.get("hereNow");
-	            	 String summary = (String) Now.get("summary");
+	            	 /* String summary = (String) Now.get("summary"); */
 	            	 long count = (Long) Now.get("count");
 
 	            	 /*To show all venues nearby
@@ -106,7 +106,7 @@ public class MurrayHillTrending {
 
 	
 	private void Yahoo() throws Exception {	
-		//Foursquare api url for venues that are trending, with oauth_token added
+		/* Foursquare api url for venues that are trending, with oauth_token added */
 		String url = "http://dev.markitondemand.com/Api/v2/Quote/json?" +
 		"json&Symbol=AAPL";
  
